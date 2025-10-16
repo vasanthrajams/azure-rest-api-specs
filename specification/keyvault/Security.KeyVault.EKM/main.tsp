@@ -36,7 +36,6 @@ namespace KeyVault;
  * The available API versions.
  */
 enum Versions {
-
   /**
    * The 2026-01-01-preview API version.
    */

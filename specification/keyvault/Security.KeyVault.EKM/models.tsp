@@ -24,6 +24,7 @@ model EkmConnection {
    */
   @encodedName("application/json", "path_prefix")
   pathPrefix?: string;
+
   /**
    * The root CA certificate chain that issued the proxy server's certificate. An array of certificates in the certificate chain, each in DER format and base64 encoded.
    */
@@ -52,7 +53,6 @@ model EkmProxyClientCertificateInfo {
  * EKM proxy information.
  */
 model EkmProxyInfo {
-
   /**
    * The highest supported proxy interface api version supported by the EKM proxy.
    */
@@ -64,16 +64,19 @@ model EkmProxyInfo {
    */
   @encodedName("application/json", "proxy_vendor")
   proxyVendor: string;
+
   /**
    * The name of the proxy product and its version.
    */
   @encodedName("application/json", "proxy_name")
   proxyName: string;
+
   /**
    * The name of the EKM vendor.
    */
   @encodedName("application/json", "ekm_vendor")
   ekmVendor: string;
+
   /**
    * The name of the EKM product and its version.
    */
