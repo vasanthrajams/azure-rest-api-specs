@@ -5,8 +5,10 @@ using Azure.Core;
 using Azure.ClientGenerator.Core;
 using Microsoft.RecoveryServices;
 
-#suppress "deprecated" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-@@flattenProperty(PrivateLinkResource.properties);
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "Back compatibility"
+@@Azure.ClientGenerator.Core.Legacy.flattenProperty(PrivateLinkResource.properties
+);
 
 @@clientName(Vaults.createOrUpdate::parameters.resource, "vault");
 @@clientName(Vaults.update::parameters.properties, "vault");
@@ -28,8 +30,10 @@ using Microsoft.RecoveryServices;
   "resourceExtendedInfoDetails",
   "python"
 );
-#suppress "deprecated" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
-@@flattenProperty(VaultExtendedInfoResource.properties);
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "FIXME: Update justification, follow aka.ms/tsp/conversion-fix for details"
+#suppress "@azure-tools/typespec-azure-core/no-legacy-usage" "Back compatibility"
+@@Azure.ClientGenerator.Core.Legacy.flattenProperty(VaultExtendedInfoResource.properties
+);
 @@clientName(RecoveryServicesOperationGroup.capabilities::parameters.body,
   "input"
 );

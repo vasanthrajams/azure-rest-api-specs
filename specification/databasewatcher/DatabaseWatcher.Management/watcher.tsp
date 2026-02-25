@@ -1,6 +1,7 @@
 import "@typespec/rest";
 import "@azure-tools/typespec-azure-core";
 import "@azure-tools/typespec-azure-resource-manager";
+import "@typespec/openapi";
 import "./alertRuleResources.tsp";
 import "./healthValidation.tsp";
 import "./sqlDbDatabaseTarget.tsp";
@@ -131,6 +132,7 @@ interface Watchers {
     Watcher,
     LroHeaders = Azure.Core.Foundations.RetryAfterHeader
   >;
+  @patch(#{ implicitOptionality: true })
   update is ArmCustomPatchAsync<
     Watcher,
     Azure.ResourceManager.Foundations.ResourceUpdateModel<

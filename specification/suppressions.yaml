@@ -19,10 +19,10 @@
     - cognitiveservices/data-plane/ContentSafety/preview/2023-04-30-preview/contentsafety.json
     - cognitiveservices/data-plane/ContentSafety/preview/2023-10-15-preview/contentsafety.json
     - cognitiveservices/data-plane/ContentSafety/preview/2024-02-15-preview/contentsafety.json
-    - cognitiveservices/data-plane/Language/preview/2023-11-15-preview/analyzedocuments.json
-    - cognitiveservices/data-plane/Language/preview/2023-11-15-preview/analyzetext.json
-    - cognitiveservices/data-plane/Language/preview/2023-11-15-preview/analyzeconversations.json
-    - cognitiveservices/data-plane/Language/preview/2024-05-15-preview/analyzeconversations.json
+    - cognitiveservices/data-plane/LanguageAnalyzeDocuments/preview/2023-11-15-preview/analyzedocuments.json
+    - cognitiveservices/data-plane/LanguageAnalyzeText/preview/2023-11-15-preview/analyzetext.json
+    - cognitiveservices/data-plane/LanguageAnalyzeConversations/preview/2023-11-15-preview/analyzeconversations.json
+    - cognitiveservices/data-plane/LanguageAnalyzeConversations/preview/2024-05-15-preview/analyzeconversations.json
     - computeschedule/resource-manager/Microsoft.ComputeSchedule/preview/2024-06-01-preview/computeschedule.json
     - confidentialledger/data-plane/Microsoft.CodeTransparency/preview/2024-01-11-preview/cts.json
     - devopsinfrastructure/resource-manager/Microsoft.DevOpsInfrastructure/preview/2023-10-30-preview/devopsinfrastructure.json
@@ -59,7 +59,7 @@
     - playwrighttesting/resource-manager/Microsoft.AzurePlaywrightService/preview/2023-10-01-preview/playwrighttesting.json
     - playwrighttesting/resource-manager/Microsoft.AzurePlaywrightService/preview/2024-08-01-preview/playwrighttesting.json
     - portalservices/resource-manager/Microsoft.PortalServices/copilotSettings/stable/2024-04-01/copilotSettings.json
-    - purview/data-plane/Azure.Analytics.Purview.DataMap/preview/2024-03-01-preview/purviewdatamap.json
+    - purview/data-plane/datamap/preview/2024-03-01-preview/purviewdatamap.json
     - servicenetworking/resource-manager/Microsoft.ServiceNetworking/ServiceNetworking/preview/2022-10-01-preview/TrafficController.json
     - servicenetworking/resource-manager/Microsoft.ServiceNetworking/ServiceNetworking/preview/2023-05-01-preview/TrafficController.json
     - sphere/resource-manager/Microsoft.AzureSphere/preview/2022-09-01-preview/azuresphere.json
@@ -70,24 +70,17 @@
   reason: Suppress until we know the awsconnector folder uses these settings
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.*
     - options.@azure-tools/typespec-java.*
     - options.@azure-tools/typespec-python.*
     - options.@azure-tools/typespec-ts.*
     - parameters.service-dir.default
   paths:
-    - awsconnector/*/tspconfig.yaml
+    - awsconnector/**/tspconfig.yaml
 
 - tool: TypeSpecValidation
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.*
     - options.@azure-tools/typespec-python.generate-sample
     - options.@azure-tools/typespec-python.generate-test
@@ -101,7 +94,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
     - options.@azure-tools/typespec-java.namespace
   paths:
     - ai/Azure.AI.Projects/tspconfig.yaml
@@ -110,12 +102,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.*
     - options.@azure-tools/typespec-ts.*
   paths:
@@ -125,12 +111,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.namespace
   paths:
     - ai/DocumentIntelligence/tspconfig.yaml
@@ -142,12 +122,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.*
     - options.@azure-tools/typespec-python.*
     - options.@azure-tools/typespec-ts.*
@@ -159,12 +133,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.namespace
     - options.@azure-tools/typespec-python.*
     - options.@azure-tools/typespec-ts.package-details.name
@@ -172,19 +140,6 @@
     - options.@azure-tools/typespec-ts.emitter-output-dir
   paths:
     - ai/OpenAI.Assistants/tspconfig.yaml
-
-- tool: TypeSpecValidation
-  reason: Suppress until spec can be updated
-  rules: [SdkTspConfigValidation]
-  sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
-  paths:
-    - apicenter/ApiCenter.DataApi/tspconfig.yaml
 
 - tool: TypeSpecValidation
   reason: Suppress until spec can be updated
@@ -202,12 +157,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.*
     - options.@azure-tools/typespec-python.*
     - options.@azure-tools/typespec-ts.*
@@ -218,7 +167,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.*
     - options.@azure-tools/typespec-java.*
   paths:
     - appcomplianceautomation/AppComplianceAutomation.Management/tspconfig.yaml
@@ -227,12 +175,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.namespace
   paths:
     - appconfiguration/data-plane/AppConfiguration/tspconfig.yaml
@@ -241,12 +183,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.namespace
   paths:
     - applicationinsights/ApplicationInsights.LiveMetrics/tspconfig.yaml
@@ -262,14 +198,6 @@
     - parameters.service-dir.default
   paths:
     - azuredatatransfer/AzureDataTransfer.Management/tspconfig.yaml
-
-- tool: TypeSpecValidation
-  reason: Suppress until spec can be updated
-  rules: [SdkTspConfigValidation]
-  sub-rules:
-    - options.@azure-tools/typespec-go.generate-samples
-  paths:
-    - azuredependencymap/DependencyMap.Management/tspconfig.yaml
 
 - tool: TypeSpecValidation
   reason: Suppress until spec can be updated
@@ -293,26 +221,12 @@
     - options.@azure-tools/typespec-ts.*
     - parameters.service-dir.default
   paths:
-    - azurestackhci/AzureStackHCI.StackHCIVM.Management/tspconfig.yaml
-
-- tool: TypeSpecValidation
-  reason: Suppress until spec can be updated
-  rules: [SdkTspConfigValidation]
-  sub-rules:
-    - options.@azure-tools/typespec-go.*
-    - options.@azure-tools/typespec-java.*
-    - options.@azure-tools/typespec-python.*
-    - options.@azure-tools/typespec-ts.*
-    - parameters.service-dir.default
-  paths:
     - azurestackhci/Operations.Management/tspconfig.yaml
 
 - tool: TypeSpecValidation
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
     - options.@azure-tools/typespec-java.namespace
     - options.@azure-tools/typespec-python.generate-sample
     - options.@azure-tools/typespec-python.generate-test
@@ -323,12 +237,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.namespace
     - options.@azure-tools/typespec-python.*
   paths:
@@ -338,12 +246,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.namespace
   paths:
     - cognitiveservices/ContentSafety/tspconfig.yaml
@@ -352,12 +254,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.*
     - options.@azure-tools/typespec-python.*
     - options.@azure-tools/typespec-ts.*
@@ -375,12 +271,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.namespace
     - options.@azure-tools/typespec-python.*
     - options.@azure-tools/typespec-ts.package-details.name
@@ -393,12 +283,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.namespace
   paths:
     - communication/Communication.JobRouter/tspconfig.yaml
@@ -420,12 +304,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.namespace
   paths:
     - confidentialledger/Microsoft.CodeTransparency/tspconfig.yaml
@@ -434,36 +312,12 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.*
     - options.@azure-tools/typespec-python.*
     - options.@azure-tools/typespec-ts.*
     - parameters.service-dir.default
   paths:
     - confidentialledger/Microsoft.ManagedCcf/tspconfig.yaml
-
-- tool: TypeSpecValidation
-  reason: Suppress until spec can be updated
-  rules: [SdkTspConfigValidation]
-  sub-rules:
-    - options.@azure-tools/typespec-go.generate-samples
-    - options.@azure-tools/typespec-ts.experimental-extensible-enums
-    - options.@azure-tools/typespec-ts.package-details.name
-  paths:
-    - connectedcache/ConnectedCache.Management/tspconfig.yaml
-
-- tool: TypeSpecValidation
-  reason: Suppress until spec can be updated
-  rules: [SdkTspConfigValidation]
-  sub-rules:
-    - options.@azure-tools/typespec-python.*
-  paths:
-    - containerservice/Fleet.Management/tspconfig.yaml
 
 - tool: TypeSpecValidation
   reason: Suppress until spec can be updated
@@ -481,22 +335,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.generate-samples
-  paths:
-    - databasefleetmanager/DatabaseFleetManager.Management/tspconfig.yaml
-
-- tool: TypeSpecValidation
-  reason: Suppress until spec can be updated
-  rules: [SdkTspConfigValidation]
-  sub-rules:
-    - options.@azure-tools/typespec-java.namespace
-  paths:
-    - dell/Dell.Storage.Management/tspconfig.yaml
-
-- tool: TypeSpecValidation
-  reason: Suppress until spec can be updated
-  rules: [SdkTspConfigValidation]
-  sub-rules:
     - options.@azure-tools/typespec-go.*
     - options.@azure-tools/typespec-java.*
     - options.@azure-tools/typespec-python.*
@@ -509,12 +347,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.namespace
   paths:
     - devcenter/DevCenter/tspconfig.yaml
@@ -523,26 +355,15 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-java.service-name
-  paths:
-    - edge/Microsoft.Edge.Management/tspconfig.yaml
-
-- tool: TypeSpecValidation
-  reason: Suppress until spec can be updated
-  rules: [SdkTspConfigValidation]
-  sub-rules:
     - options.@azure-tools/typespec-csharp.*
     - options.@azure-tools/typespec-ts.*
   paths:
-    - edge/Microsoft.Edge.ConfigurationManager.Management/tspconfig.yaml
     - edge/Microsoft.Edge.Configurations.Management/tspconfig.yaml
 
 - tool: TypeSpecValidation
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
     - options.@azure-tools/typespec-java.namespace
     - options.@azure-tools/typespec-ts.package-details.name
     - options.@azure-tools/typespec-ts.package-dir
@@ -550,14 +371,6 @@
   paths:
     - eventgrid/Azure.Messaging.EventGrid/tspconfig.yaml
     - eventgrid/Azure.Messaging.EventGrid.SystemEvents/tspconfig.yaml
-
-- tool: TypeSpecValidation
-  reason: Suppress until spec can be updated
-  rules: [SdkTspConfigValidation]
-  sub-rules:
-    - options.@azure-tools/typespec-java.service-name
-  paths:
-    - fabric/resource-manager/Microsoft.Fabric/Fabric/tspconfig.yaml
 
 - tool: TypeSpecValidation
   reason: Suppress until spec can be updated
@@ -575,12 +388,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.namespace
     - options.@azure-tools/typespec-python.generate-sample
     - options.@azure-tools/typespec-python.generate-test
@@ -588,14 +395,6 @@
     - options.@azure-tools/typespec-ts.emitter-output-dir
   paths:
     - healthdataaiservices/HealthDataAIServices.DeidServices/tspconfig.yaml
-
-- tool: TypeSpecValidation
-  reason: Suppress until spec can be updated
-  rules: [SdkTspConfigValidation]
-  sub-rules:
-    - options.@azure-tools/typespec-go.*
-  paths:
-    - informatica/Informatica.DataManagement.Management/tspconfig.yaml
 
 - tool: TypeSpecValidation
   reason: Suppress until spec can be updated
@@ -637,12 +436,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.namespace
     - options.@azure-tools/typespec-python.generate-sample
     - options.@azure-tools/typespec-python.generate-test
@@ -656,7 +449,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
     - options.@azure-tools/typespec-java.*
     - options.@azure-tools/typespec-python.*
     - options.@azure-tools/typespec-ts.*
@@ -670,7 +462,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
     - options.@azure-tools/typespec-java.namespace
     - options.@azure-tools/typespec-python.generate-sample
     - options.@azure-tools/typespec-python.generate-test
@@ -686,12 +477,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.*
     - options.@azure-tools/typespec-python.generate-sample
     - options.@azure-tools/typespec-python.generate-test
@@ -703,15 +488,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.*
-  paths:
-    - kubernetesruntime/KubernetesRuntime.Management/tspconfig.yaml
-
-- tool: TypeSpecValidation
-  reason: Suppress until spec can be updated
-  rules: [SdkTspConfigValidation]
-  sub-rules:
-    - options.@azure-tools/typespec-go.*
     - options.@azure-tools/typespec-java.*
   paths:
     - liftrastronomer/Astronomer.Astro.Management/tspconfig.yaml
@@ -720,16 +496,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.*
-    - options.@azure-tools/typespec-java.*
-  paths:
-    - liftrqumulo/Qumulo.Storage.Management/tspconfig.yaml
-
-- tool: TypeSpecValidation
-  reason: Suppress until spec can be updated
-  rules: [SdkTspConfigValidation]
-  sub-rules:
-    - options.@azure-tools/typespec-go.flavor
     - options.@azure-tools/typespec-java.namespace
   paths:
     - loadtestservice/LoadTestService/tspconfig.yaml
@@ -738,21 +504,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.generate-samples
-  paths:
-    - loadtestservice/LoadTestService.Management/tspconfig.yaml
-    - loadtestservice/Playwright.Management/tspconfig.yaml
-
-- tool: TypeSpecValidation
-  reason: Suppress until spec can be updated
-  rules: [SdkTspConfigValidation]
-  sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.namespace
     - options.@azure-tools/typespec-ts.package-details.name
     - options.@azure-tools/typespec-ts.package-dir
@@ -764,12 +515,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.*
   paths:
     - machinelearningservices/AzureAI.Assets/tspconfig.yaml
@@ -778,7 +523,16 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.*
+    - options.@azure-tools/typespec-java.*
+    - options.@azure-tools/typespec-python.*
+    - options.@azure-tools/typespec-ts.*
+  paths:
+    - marketplacecatalog/data-plane/Products/tspconfig.yaml
+
+- tool: TypeSpecValidation
+  reason: Suppress until spec can be updated
+  rules: [SdkTspConfigValidation]
+  sub-rules:
     - options.@azure-tools/typespec-java.*
     - options.@azure-tools/typespec-python.*
     - options.@azure-tools/typespec-ts.*
@@ -790,32 +544,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.*
-    - options.@azure-tools/typespec-python.namespace
-  paths:
-    - migrate/AssessmentProjects.Management/AKSAssessments.Management/tspconfig.yaml
-    - migrate/AssessmentProjects.Management/AvsAssessments.Management/tspconfig.yaml
-    - migrate/AssessmentProjects.Management/BusinessCases.Management/tspconfig.yaml
-    - migrate/AssessmentProjects.Management/Collectors.Management/tspconfig.yaml
-    - migrate/AssessmentProjects.Management/SqlAssessments.Management/tspconfig.yaml
-    - migrate/AssessmentProjects.Management/WebAppAssessments.Management/tspconfig.yaml
-    - migrate/AssessmentProjects.Management/WebAppCompoundAssessments.Management/tspconfig.yaml
-    - migrate/AssessmentProjects.Management/HeterogeneousAssessments.Management/tspconfig.yaml
-    - migrate/AssessmentProjects.Management/MachineAssessments.Management/tspconfig.yaml
-
-- tool: TypeSpecValidation
-  reason: Suppress until spec can be updated
-  rules: [SdkTspConfigValidation]
-  sub-rules:
-    - options.@azure-tools/typespec-go.*
-  paths:
-    - migrate/AssessmentProjects.Management/AssessmentProjects.Management/tspconfig.yaml
-
-- tool: TypeSpecValidation
-  reason: Suppress until spec can be updated
-  rules: [SdkTspConfigValidation]
-  sub-rules:
-    - options.@azure-tools/typespec-go.*
     - options.@azure-tools/typespec-java.*
   paths:
     - monitor/Microsoft.Monitor.Management/tspconfig.yaml
@@ -837,7 +565,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
     - options.@azure-tools/typespec-java.namespace
     - options.@azure-tools/typespec-python.generate-sample
     - options.@azure-tools/typespec-python.generate-test
@@ -848,12 +575,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.*
     - options.@azure-tools/typespec-ts.*
   paths:
@@ -863,25 +584,11 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.namespace
     - options.@azure-tools/typespec-python.generate-sample
     - options.@azure-tools/typespec-python.generate-test
   paths:
     - playwrighttesting/PlaywrightTesting.AuthManager/tspconfig.yaml
-
-- tool: TypeSpecValidation
-  reason: Suppress until spec can be updated
-  rules: [SdkTspConfigValidation]
-  sub-rules:
-    - options.@azure-tools/typespec-go.*
-  paths:
-    - playwrighttesting/PlaywrightTesting.Management/tspconfig.yaml
 
 - tool: TypeSpecValidation
   reason: Suppress until spec can be updated
@@ -912,12 +619,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.*
   paths:
     - programmableconnectivity/Azure.ProgrammableConnectivity/tspconfig.yaml
@@ -926,23 +627,9 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.*
-  paths:
-    - programmableconnectivity/ProgrammableConnectivity.Management/tspconfig.yaml
-
-- tool: TypeSpecValidation
-  reason: Suppress until spec can be updated
-  rules: [SdkTspConfigValidation]
-  sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.namespace
   paths:
-    - purview/Azure.Analytics.Purview.DataMap/tspconfig.yaml
+    - purview/data-plane/datamap/tspconfig.yaml
 
 - tool: TypeSpecValidation
   reason: Suppress until spec can be updated
@@ -972,26 +659,12 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.*
     - options.@azure-tools/typespec-python.generate-sample
     - options.@azure-tools/typespec-python.generate-test
     - options.@azure-tools/typespec-ts.*
   paths:
     - quantum/Quantum.Workspace/tspconfig.yaml
-
-- tool: TypeSpecValidation
-  reason: Suppress until spec can be updated
-  rules: [SdkTspConfigValidation]
-  sub-rules:
-    - options.@azure-tools/typespec-go.generate-samples
-  paths:
-    - recoveryservicesdatareplication/resource-manager/Microsoft.DataReplication/DataReplication/tspconfig.yaml
 
 - tool: TypeSpecValidation
   reason: Suppress until spec can be updated
@@ -1006,20 +679,6 @@
   rules: [SdkTspConfigValidation]
   sub-rules:
     - options.@azure-tools/typespec-java.namespace
-  paths:
-    - resources/Bicep.Management/tspconfig.yaml
-
-- tool: TypeSpecValidation
-  reason: Suppress until spec can be updated
-  rules: [SdkTspConfigValidation]
-  sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
-    - options.@azure-tools/typespec-java.namespace
     - options.@azure-tools/typespec-python.*
   paths:
     - riskiq/Easm/tspconfig.yaml
@@ -1028,12 +687,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.namespace
     - options.@azure-tools/typespec-ts.package-details.name
     - options.@azure-tools/typespec-ts.package-dir
@@ -1045,7 +698,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.*
     - options.@azure-tools/typespec-java.*
   paths:
     - scvmm/ScVmm.Management/tspconfig.yaml
@@ -1054,10 +706,9 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-samples
+    - options.@azure-tools/typespec-csharp.*
   paths:
-    - servicefabricmanagedclusters/ServiceFabricManagedClusters.Management/tspconfig.yaml
+    - servicebus/ServiceBus.Management/tspconfig.yaml
 
 - tool: TypeSpecValidation
   reason: Suppress until spec can be updated
@@ -1075,7 +726,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.*
     - options.@azure-tools/typespec-java.*
   paths:
     - sphere/Sphere.Management/tspconfig.yaml
@@ -1096,12 +746,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.namespace
     - options.@azure-tools/typespec-python.generate-sample
     - options.@azure-tools/typespec-python.generate-test
@@ -1112,12 +756,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.namespace
   paths:
     - translation/data-plane/TextTranslation/tspconfig.yaml
@@ -1126,12 +764,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.namespace
   paths:
     - trustedsigning/data-plane/TrustedSigning/tspconfig.yaml
@@ -1140,7 +772,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.*
     - options.@azure-tools/typespec-java.*
   paths:
     - verifiedid/Microsoft.VerifiedId.Management/tspconfig.yaml
@@ -1149,12 +780,6 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.flavor
-    - options.@azure-tools/typespec-go.generate-fakes
-    - options.@azure-tools/typespec-go.inject-spans
-    - options.@azure-tools/typespec-go.package-dir
-    - options.@azure-tools/typespec-go.emitter-output-dir
-    - options.@azure-tools/typespec-go.service-dir
     - options.@azure-tools/typespec-java.*
     - options.@azure-tools/typespec-python.*
     - options.@azure-tools/typespec-ts.*
@@ -1177,8 +802,66 @@
   reason: Suppress until spec can be updated
   rules: [SdkTspConfigValidation]
   sub-rules:
-    - options.@azure-tools/typespec-go.*
     - options.@azure-tools/typespec-java.*
   paths:
     - workloads/Workloads.SAPDiscoverySite.Management/tspconfig.yaml
     - workloads/Workloads.SAPMonitor.Management/tspconfig.yaml
+
+- tool: TypeSpecValidation
+  reason: Suppress until Go needs to generate SDK
+  rules: [SdkTspConfigValidation]
+  sub-rules:
+    - options.@azure-tools/typespec-go.*
+  paths:
+    - ai/Azure.AI.Agents/tspconfig.yaml
+    - ai/Azure.AI.Projects/tspconfig.yaml
+    - ai/ContentUnderstanding/tspconfig.yaml
+    - ai/DocumentIntelligence/tspconfig.yaml
+    - ai/Face/tspconfig.yaml
+    - ai/HealthInsights/HealthInsights.OpenAPI/tspconfig.yaml
+    - ai/HealthInsights/HealthInsights.RadiologyInsights/tspconfig.yaml
+    - ai/ImageAnalysis/tspconfig.yaml
+    - ai/ModelInference/tspconfig.yaml
+    - ai/OpenAI.Assistants/tspconfig.yaml
+    - apicenter/ApiCenter.DataApi/tspconfig.yaml
+    - app/data-plane/DynamicSessions/tspconfig.yaml
+    - appconfiguration/data-plane/AppConfiguration/tspconfig.yaml
+    - applicationinsights/ApplicationInsights.LiveMetrics/tspconfig.yaml
+    - awsconnector/**/tspconfig.yaml
+    - cognitiveservices/AnomalyDetector/tspconfig.yaml
+    - cognitiveservices/ContentSafety/tspconfig.yaml
+    - cognitiveservices/Language.AnalyzeConversations-authoring/tspconfig.yaml
+    - cognitiveservices/Language.AnalyzeDocuments/tspconfig.yaml
+    - cognitiveservices/Language.AnalyzeText/tspconfig.yaml
+    - cognitiveservices/Language.AnalyzeText-authoring/tspconfig.yaml
+    - cognitiveservices/Language.Conversations/tspconfig.yaml
+    - cognitiveservices/Language.QuestionAnswering/tspconfig.yaml
+    - cognitiveservices/Language.QuestionAnswering-authoring/tspconfig.yaml
+    - cognitiveservices/OpenAI.Inference/tspconfig.yaml
+    - cognitiveservices/Speech.VideoTranslation/tspconfig.yaml
+    - communication/Communication.JobRouter/tspconfig.yaml
+    - communication/Communication.Messages/tspconfig.yaml
+    - confidentialledger/Microsoft.CodeTransparency/tspconfig.yaml
+    - confidentialledger/Microsoft.ManagedCcf/tspconfig.yaml
+    - devcenter/DevCenter/tspconfig.yaml
+    - healthdataaiservices/HealthDataAIServices.DeidServices/tspconfig.yaml
+    - keyvault/Security.KeyVault.Administration/tspconfig.yaml
+    - keyvault/Security.KeyVault.SecurityDomain/tspconfig.yaml
+    - loadtestservice/data-plane/loadtesting/tspconfig.yaml
+    - loadtestservice/data-plane/playwright/tspconfig.yaml
+    - machinelearning/Azure.AI.ChatProtocol/tspconfig.yaml
+    - machinelearningservices/AzureAI.Assets/tspconfig.yaml
+    - marketplacecatalog/data-plane/Products/tspconfig.yaml
+    - orbital/Microsoft.PlanetaryComputer/tspconfig.yaml
+    - playwrighttesting/PlaywrightTesting.AuthManager/tspconfig.yaml
+    - programmableconnectivity/Azure.ProgrammableConnectivity/tspconfig.yaml
+    - purview/data-plane/datamap/tspconfig.yaml
+    - quantum/Quantum.Workspace/tspconfig.yaml
+    - riskiq/Easm/tspconfig.yaml
+    - schemaregistry/data-plane/SchemaRegistry/tspconfig.yaml
+    - storage/Microsoft.BlobStorage/tspconfig.yaml
+    - translation/data-plane/DocumentTranslation/tspconfig.yaml
+    - translation/data-plane/TextTranslation/tspconfig.yaml
+    - trustedsigning/data-plane/TrustedSigning/tspconfig.yaml
+    - voiceservices/VoiceServices.Provisioning/tspconfig.yaml
+    - webpubsub/data-plane/WebPubSub/tspconfig.yaml
